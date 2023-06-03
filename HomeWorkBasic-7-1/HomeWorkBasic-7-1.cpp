@@ -14,19 +14,18 @@ void add() {
     std::cin >> second;
     std::cout << "Результат сложения: " << first + second;
 }
-#elif (MODE == 0)
-void Test() {
-    std::cout << "Работаю в тестовом режиме";
-}
-#else 
-void UnknownMode() {
-    std::cout << "Неизвестный режим. Завершение работы";
-}
 #endif
 #endif // !MODE
 
 
 int main() {
     setlocale(LC_ALL, "Russian");
+
+#if (MODE == 0)
+    std::cout << "Работаю в тестовом режиме";
+#elif (MODE == 1)
     add();
+#else
+    std::cout << "Неизвестный режим. Завершение работы";
+#endif
 }
